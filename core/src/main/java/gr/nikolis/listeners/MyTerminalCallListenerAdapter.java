@@ -3,7 +3,6 @@ package gr.nikolis.listeners;
 import com.avaya.jtapi.tsapi.ITsapiCallIDPrivate;
 import com.avaya.jtapi.tsapi.LucentAddress;
 import com.avaya.jtapi.tsapi.LucentTerminal;
-import com.avaya.jtapi.tsapi.adapters.CallListenerAdapter;
 import com.avaya.jtapi.tsapi.adapters.TerminalConnectionListenerAdapter;
 import gr.nikolis.service.ServiceJTapi;
 import lombok.NonNull;
