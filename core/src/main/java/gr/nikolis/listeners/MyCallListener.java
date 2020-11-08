@@ -42,14 +42,13 @@ public class MyCallListener extends TerminalConnectionListenerAdapter {
      * @param event The event that is being triggered
      */
     public void handleIncomingCall(@NonNull TerminalConnectionEvent event) {
-        Address callingAddress, calledAddress;
+        Address callingAddress;
         Terminal callingTerminal;
         String name = null;
         Date d = new Date();
 
         callingTerminal = event.getTerminalConnection().getTerminal();
         callingAddress = event.getCall().getConnections()[0].getAddress();
-        calledAddress = event.getCall().getConnections()[1].getAddress();
 
         if (callingAddress != null) {
             // verify that callingAddress is not our address, otherwise, it is us
@@ -66,9 +65,9 @@ public class MyCallListener extends TerminalConnectionListenerAdapter {
                 if (name == null)
                     name = callingAddress.getName();
             }
-            log.info(DateFormat.getDateTimeInstance().format(d) + " Call received from: " + name);
+            log.info(DateFormat.getDateTimeInstance().format(d) + " Incoming call from: " + name);
         } else
-            log.info(DateFormat.getDateTimeInstance().format(d) + " Call received from: <Unknown>");
+            log.info(DateFormat.getDateTimeInstance().format(d) + " Incoming call from: <Unknown>");
     }
 
     /**
