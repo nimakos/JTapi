@@ -8,7 +8,7 @@ import javax.telephony.CallEvent;
 
 @Component
 @Slf4j
-public class MyCallListener extends CallListenerAdapter {
+public class MyCallListenerAdapter extends CallListenerAdapter {
     @Override
     public void callActive(CallEvent event) {
         log.info("New Call");

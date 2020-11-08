@@ -19,7 +19,7 @@ import java.util.Date;
 
 @Component
 @Slf4j
-public class MyTerminalCallListener extends TerminalConnectionListenerAdapter {
+public class MyTerminalCallListenerAdapter extends TerminalConnectionListenerAdapter {
 
     @Autowired
     ServiceJTapi serviceJTapi;

@@ -1,9 +1,8 @@
 package gr.nikolis.service;
 
-import com.avaya.jtapi.tsapi.adapters.CallListenerAdapter;
 import com.avaya.jtapi.tsapi.adapters.ProviderListenerAdapter;
-import gr.nikolis.listeners.MyCallListener;
-import gr.nikolis.listeners.MyTerminalCallListener;
+import gr.nikolis.listeners.MyCallListenerAdapter;
+import gr.nikolis.listeners.MyTerminalCallListenerAdapter;
 import gr.nikolis.models.JTapiData;
 import gr.nikolis.qualifiers.JTapiPeer;
 import lombok.Getter;
@@ -23,9 +22,9 @@ public class ServiceJTapi extends ProviderListenerAdapter {
     @Autowired
     JtapiPeer jtapiPeer;
     @Autowired
-    MyTerminalCallListener myTerminalCallListener;
+    MyTerminalCallListenerAdapter myTerminalCallListenerAdapter;
     @Autowired
-    MyCallListener myCallListener;
+    MyCallListenerAdapter myCallListenerAdapter;
 
     JTapiData jTapiData;
     Provider provider;
@@ -88,8 +87,8 @@ public class ServiceJTapi extends ProviderListenerAdapter {
             } catch (Exception ex) {
                 log.error("Please verify that the dialing extension number is correct.");
             }
-            myTerminal.addCallListener(myTerminalCallListener);
-            myAddress.addCallListener(myCallListener);
+            myTerminal.addCallListener(myTerminalCallListenerAdapter);
+            myAddress.addCallListener(myCallListenerAdapter);
         } catch (Exception ex) {
             log.error("login() caught " + ex + "Message: " + ex.getMessage());
         }
