@@ -118,12 +118,4 @@ public class ServiceJTapi extends ProviderListenerAdapter {
     public String getServiceName() {
         return getServices()[0];
     }
-
-    public void makeCall() {
-        try {
-            provider.createCall();
-        } catch (ResourceUnavailableException | InvalidStateException | PrivilegeViolationException | MethodNotSupportedException e) {
-            e.printStackTrace();
-        }
-    }
 }
