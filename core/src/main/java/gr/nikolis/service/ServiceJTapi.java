@@ -37,6 +37,7 @@ public class ServiceJTapi extends ProviderListenerAdapter {
     @Autowired
     public ServiceJTapi(JTapiData jTapiData) {
         this.jTapiData = jTapiData;
+        log.info("Starting API");
     }
 
     /***
